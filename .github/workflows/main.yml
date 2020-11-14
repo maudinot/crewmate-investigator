@@ -20,7 +20,7 @@ jobs:
     steps:
       # Install Qt
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2.9.
+        uses: jurplel/install-qt-action@v2.9.0
         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
