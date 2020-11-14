@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/crewmates">
+        <file>images/amongblack.png</file>
+        <file>images/amongblue.png</file>
+        <file>images/amongbrown.png</file>
+        <file>images/amongcyan.png</file>
+        <file>images/amonggreen.png</file>
+        <file>images/amonglime.png</file>
+        <file>images/amongorange.png</file>
+        <file>images/amongpink.png</file>
+        <file>images/amongpurple.png</file>
+        <file>images/amongred.png</file>
+        <file>images/amongwhite.png</file>
+        <file>images/amongyellow.png</file>
+    </qresource>
+    <qresource prefix="/logo">
+        <file>images/magnifier.png</file>
+    </qresource>
+    <qresource prefix="/maps">
+        <file>images/Skeld_Map.png</file>
+        <file>images/MIRA_HQ_Map.png</file>
+        <file>images/Polus_Map.png</file>
+    </qresource>
+    <qresource prefix="/bodies">
+        <file>images/blackdead.png</file>
+        <file>images/bluedead.png</file>
+        <file>images/browndead.png</file>
+        <file>images/cyandead.png</file>
+        <file>images/greendead.png</file>
+        <file>images/limedead.png</file>
+        <file>images/orangedead.png</file>
+        <file>images/pinkdead.png</file>
+        <file>images/purpledead.png</file>
+        <file>images/reddead.png</file>
+        <file>images/whitedead.png</file>
+        <file>images/yellowdead.png</file>
+    </qresource>
+</RCC>
