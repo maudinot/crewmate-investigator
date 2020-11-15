@@ -28,7 +28,11 @@ jobs:
 
       # Qmake
       - name: Qmake
-        run: qmake AmongUsMap.pro CONFIG+=release 
+        run: qmake -o Makefile AmongUsMap.pro CONFIG+=release 
+        
+       # make
+      - name: make
+        run: make
       
       # Upload build artifact
       - name: Upload a Build Artifact
