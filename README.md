@@ -12,4 +12,4 @@ Made with Qt 5.12.6
 # TODO
 
 * screenshot function
-* drawn paths
+* more user-friendly drawing of paths
