@@ -65,7 +65,7 @@ void MapWindow::on_blackButton_clicked()
     QCursor cursor(blackCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(black);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 
@@ -76,7 +76,7 @@ void MapWindow::on_blueButton_clicked()
     QCursor cursor(blueCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(blue);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_brownButton_clicked()
@@ -86,7 +86,7 @@ void MapWindow::on_brownButton_clicked()
     QCursor cursor(brownCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(brown);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_cyanButton_clicked()
@@ -96,7 +96,7 @@ void MapWindow::on_cyanButton_clicked()
     QCursor cursor(cyanCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(cyan);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_greenButton_clicked()
@@ -106,7 +106,7 @@ void MapWindow::on_greenButton_clicked()
     QCursor cursor(greenCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(green);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_orangeButton_clicked()
@@ -116,7 +116,7 @@ void MapWindow::on_orangeButton_clicked()
     QCursor cursor(orangeCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(orange);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_pinkButton_clicked()
@@ -126,7 +126,7 @@ void MapWindow::on_pinkButton_clicked()
     QCursor cursor(pinkCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(pink);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_purpleButton_clicked()
@@ -136,7 +136,7 @@ void MapWindow::on_purpleButton_clicked()
     QCursor cursor(purpleCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(purple);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_redButton_clicked()
@@ -146,7 +146,7 @@ void MapWindow::on_redButton_clicked()
     QCursor cursor(redCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(red);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_whiteButton_clicked()
@@ -156,7 +156,7 @@ void MapWindow::on_whiteButton_clicked()
     QCursor cursor(whiteCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(white);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_yellowButton_clicked()
@@ -166,7 +166,7 @@ void MapWindow::on_yellowButton_clicked()
     QCursor cursor(yellowCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(yellow);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_limeButton_clicked()
@@ -176,7 +176,7 @@ void MapWindow::on_limeButton_clicked()
     QCursor cursor(limeCursor);
     activeMap->setCursor(cursor);
     activeMap->setSelected(lime);
-    activeMap->setBody(false);
+    activeMap->setCrew();
 }
 
 void MapWindow::on_clearButton_clicked()
@@ -191,7 +191,7 @@ void MapWindow::on_blackButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(black);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_blueButton_2_clicked()
@@ -201,7 +201,7 @@ void MapWindow::on_blueButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(blue);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_brownButton_2_clicked()
@@ -211,7 +211,7 @@ void MapWindow::on_brownButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(brown);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_cyanButton_2_clicked()
@@ -221,7 +221,7 @@ void MapWindow::on_cyanButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(cyan);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_greenButton_2_clicked()
@@ -231,7 +231,7 @@ void MapWindow::on_greenButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(green);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_orangeButton_2_clicked()
@@ -241,7 +241,7 @@ void MapWindow::on_orangeButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(orange);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_pinkButton_2_clicked()
@@ -251,7 +251,7 @@ void MapWindow::on_pinkButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(pink);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_purpleButton_2_clicked()
@@ -261,7 +261,7 @@ void MapWindow::on_purpleButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(purple);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_redButton_2_clicked()
@@ -271,7 +271,7 @@ void MapWindow::on_redButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(red);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_whiteButton_2_clicked()
@@ -281,7 +281,7 @@ void MapWindow::on_whiteButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(white);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_yellowButton_2_clicked()
@@ -291,7 +291,7 @@ void MapWindow::on_yellowButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(yellow);
-    activeMap->setBody(true);
+    activeMap->setBody();
 }
 
 void MapWindow::on_limeButton_2_clicked()
@@ -301,5 +301,89 @@ void MapWindow::on_limeButton_2_clicked()
     QCursor cursor(pixmap);
     activeMap->setCursor(cursor);
     activeMap->setSelected(lime);
-    activeMap->setBody(true);
+    activeMap->setBody();
+}
+
+void MapWindow::on_blackButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(black);
+    activeMap->setPath();
+}
+
+void MapWindow::on_blueButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(blue);
+    activeMap->setPath();
+}
+
+void MapWindow::on_brownButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(brown);
+    activeMap->setPath();
+}
+
+void MapWindow::on_cyanButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(cyan);
+    activeMap->setPath();
+}
+
+void MapWindow::on_greenButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(green);
+    activeMap->setPath();
+}
+
+void MapWindow::on_orangeButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(orange);
+    activeMap->setPath();
+}
+
+void MapWindow::on_pinkButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(pink);
+    activeMap->setPath();
+}
+
+void MapWindow::on_purpleButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(purple);
+    activeMap->setPath();
+}
+
+void MapWindow::on_redButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(red);
+    activeMap->setPath();
+}
+
+void MapWindow::on_whiteButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(white);
+    activeMap->setPath();
+}
+
+void MapWindow::on_yellowButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(yellow);
+    activeMap->setPath();
+}
+
+void MapWindow::on_limeButton_3_clicked()
+{
+    activeMap->setCursor(Qt::CrossCursor);
+    activeMap->setSelected(lime);
+    activeMap->setPath();
 }

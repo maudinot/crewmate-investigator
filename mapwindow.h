@@ -81,6 +81,30 @@ private slots:
     void on_yellowButton_2_clicked();
     void on_limeButton_2_clicked();
 
+    void on_blackButton_3_clicked();
+
+    void on_blueButton_3_clicked();
+
+    void on_brownButton_3_clicked();
+
+    void on_cyanButton_3_clicked();
+
+    void on_greenButton_3_clicked();
+
+    void on_orangeButton_3_clicked();
+
+    void on_pinkButton_3_clicked();
+
+    void on_purpleButton_3_clicked();
+
+    void on_redButton_3_clicked();
+
+    void on_whiteButton_3_clicked();
+
+    void on_yellowButton_3_clicked();
+
+    void on_limeButton_3_clicked();
+
 private:
     Ui::MapWindow *ui;
     QMainWindow * mainWindow;

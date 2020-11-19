@@ -133,7 +133,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -715,6 +715,302 @@
              <property name="icon">
               <iconset resource="images.qrc">
                <normaloff>:/bodies/images/browndead.png</normaloff>:/bodies/images/browndead.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>Path</string>
+         </attribute>
+         <widget class="QWidget" name="layoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>375</width>
+            <height>230</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="3" column="3">
+            <widget class="QPushButton" name="limeButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amonglime.png</normaloff>:/crewmates/images/amonglime.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="orangeButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongorange.png</normaloff>:/crewmates/images/amongorange.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="redButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongred.png</normaloff>:/crewmates/images/amongred.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QPushButton" name="whiteButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongwhite.png</normaloff>:/crewmates/images/amongwhite.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QPushButton" name="purpleButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongpurple.png</normaloff>:/crewmates/images/amongpurple.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="blackButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongblack.png</normaloff>:/crewmates/images/amongblack.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="cyanButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongcyan.png</normaloff>:/crewmates/images/amongcyan.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="blueButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongblue.png</normaloff>:/crewmates/images/amongblue.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QPushButton" name="yellowButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongyellow.png</normaloff>:/crewmates/images/amongyellow.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="greenButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amonggreen.png</normaloff>:/crewmates/images/amonggreen.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QPushButton" name="pinkButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongpink.png</normaloff>:/crewmates/images/amongpink.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="brownButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="images.qrc">
+               <normaloff>:/crewmates/images/amongbrown.png</normaloff>:/crewmates/images/amongbrown.png</iconset>
              </property>
              <property name="iconSize">
               <size>

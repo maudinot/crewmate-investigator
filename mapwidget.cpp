@@ -5,6 +5,7 @@ MapWidget::MapWidget(QWidget * parent) : QLabel(parent), blackCrew(this), blueCr
 {
     selected = none;
     body = false;
+    path = false;
     QPixmap pixmap = QPixmap(":/crewmates/images/amongblack.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
     blackCrew.setPixmap(pixmap);
@@ -105,8 +106,8 @@ MapWidget::MapWidget(QWidget * parent) : QLabel(parent), blackCrew(this), blueCr
 
 void MapWidget::mousePressEvent(QMouseEvent *event)
 {
-    QLabel * selectedLabel;
-    if(!body){
+    QLabel * selectedLabel = nullptr;
+    if(!body && !path){
         switch (selected) {
         case black:
             selectedLabel = &blackCrew;
@@ -146,9 +147,9 @@ void MapWidget::mousePressEvent(QMouseEvent *event)
             break;
         case none:
             event->ignore();
-            return;
+            break;
         }
-    } else {
+    } else if(!path) {
         switch (selected) {
         case black:
             selectedLabel = &blackBody;
@@ -188,26 +189,69 @@ void MapWidget::mousePressEvent(QMouseEvent *event)
             break;
         case none:
             event->ignore();
-            return;
+            break;
         }
     }
-    if(event->button() == Qt::LeftButton){
+    if(event->button() == Qt::LeftButton && !path && selectedLabel != nullptr){
         selectedLabel->move(event->x() - selectedLabel->pixmap()->width()/2,event->y() - selectedLabel->pixmap()->height()/2);
         if(!selectedLabel->isVisible())
             selectedLabel->show();
         event->accept();
+    } else if(event->button() == Qt::LeftButton && path && selected!=none) {
+        if(crewPath[selected].isEmpty()) {
+            crewPath[selected].addEllipse(event->x(),event->y(),1,1);
+        } else {
+            crewPath[selected].lineTo(event->x(),event->y());
+        }
+        update();
+        event->accept();
     } else if (event->button() == Qt::RightButton) {
         setCursor(Qt::ArrowCursor);
         selected = none;
+        update();
         event->accept();
     } else {
         event->ignore();
     }
+
 }
 
-void MapWidget::setBody(bool value)
+void MapWidget::paintEvent(QPaintEvent *e)
 {
-    body = value;
+    QLabel::paintEvent(e);
+    QPainter painter;
+    QPen pen;
+    pen.setWidth(5);
+    painter.begin(this);
+    for (int col = 1; col<14 ; col++) {
+        pen.setColor(toQColor(static_cast<crewColor>(col)));
+        painter.setPen(pen);
+        painter.drawPath(crewPath[col]);
+        if(path && selected==col) {
+            painter.drawEllipse(crewPath[col].currentPosition(),5,5);
+        }
+    }
+    painter.end();
+}
+
+void MapWidget::setCrew()
+{
+    path = false;
+    body = false;
+}
+
+void MapWidget::setPath()
+{
+    path = true;
+    body = false;
+    update();//to show the last point
+}
+
+void MapWidget::setBody()
+{
+    body = true;
+    path = false;
+
 }
 
 void MapWidget::setSelected(const crewColor &value)
@@ -241,6 +285,11 @@ void MapWidget::reset()
     whiteBody.hide();
     yellowBody.hide();
     limeBody.hide();
+    for (int col = 1; col<14 ; col++) {
+        crewPath[col] = QPainterPath();
+    }
+    update();
     setCursor(Qt::ArrowCursor);
     selected = none;
+    setCrew();//just to restore the default state
 }
