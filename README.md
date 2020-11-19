@@ -11,6 +11,5 @@ Made with Qt 5.12.6
 
 # TODO
 
-* make the window behave properly when resized
 * screenshot function
 * drawn paths
