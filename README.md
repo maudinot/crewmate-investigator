@@ -7,6 +7,8 @@ I made this program for myself, but if you have any suggestions you can open a i
 
 Made with Qt 5.12.6
 
+![CI](https://github.com/maudinot/crewmate-investigator/workflows/CI/badge.svg?branch=master)
+
 # TODO
 
 * make the window behave properly when resized
