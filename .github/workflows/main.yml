@@ -44,7 +44,7 @@ jobs:
           # Artifact name
           name: Investigator
           # A file, directory or wildcard pattern that describes what to upload
-          path: AmongUsMap.exe
+          path: release/AmongUsMap.exe
           # The desired behavior if no files are found using the provided path (warn error ignore)
           if-no-files-found: warn
           retention-days: 30
