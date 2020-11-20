@@ -1,198 +1,118 @@
 #include "mapwidget.h"
 
-MapWidget::MapWidget(QWidget * parent) : QLabel(parent), blackCrew(this), blueCrew(this), brownCrew(this), cyanCrew(this), greenCrew(this), orangeCrew(this), pinkCrew(this), purpleCrew(this), redCrew(this), whiteCrew(this), yellowCrew(this), limeCrew(this),
-    blackBody(this), blueBody(this), brownBody(this), cyanBody(this), greenBody(this), orangeBody(this), pinkBody(this), purpleBody(this), redBody(this), whiteBody(this), yellowBody(this), limeBody(this)
-{
+MapWidget::MapWidget(QWidget * parent) : QLabel(parent) {
+    for (int col = 0; col<14 ; col++) {
+        crew[col].setParent(this);
+        dead[col].setParent(this);
+    }
     selected = none;
     body = false;
     path = false;
     QPixmap pixmap = QPixmap(":/crewmates/images/amongblack.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    blackCrew.setPixmap(pixmap);
-    blackCrew.hide();
+    crew[black].setPixmap(pixmap);
+    crew[black].hide();
     pixmap = QPixmap(":/crewmates/images/amongblue.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    blueCrew.setPixmap(pixmap);
-    blueCrew.hide();
+    crew[blue].setPixmap(pixmap);
+    crew[blue].hide();
     pixmap = QPixmap(":/crewmates/images/amongbrown.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    brownCrew.setPixmap(pixmap);
-    brownCrew.hide();
+    crew[brown].setPixmap(pixmap);
+    crew[brown].hide();
     pixmap = QPixmap(":/crewmates/images/amongcyan.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    cyanCrew.setPixmap(pixmap);
-    cyanCrew.hide();
+    crew[cyan].setPixmap(pixmap);
+    crew[cyan].hide();
     pixmap = QPixmap(":/crewmates/images/amonggreen.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    greenCrew.setPixmap(pixmap);
-    greenCrew.hide();
+    crew[green].setPixmap(pixmap);
+    crew[green].hide();
     pixmap = QPixmap(":/crewmates/images/amongorange.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    orangeCrew.setPixmap(pixmap);
-    orangeCrew.hide();
+    crew[orange].setPixmap(pixmap);
+    crew[orange].hide();
     pixmap = QPixmap(":/crewmates/images/amongpink.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    pinkCrew.setPixmap(pixmap);
-    pinkCrew.hide();
+    crew[pink].setPixmap(pixmap);
+    crew[pink].hide();
     pixmap = QPixmap(":/crewmates/images/amongpurple.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    purpleCrew.setPixmap(pixmap);
-    purpleCrew.hide();
+    crew[purple].setPixmap(pixmap);
+    crew[purple].hide();
     pixmap = QPixmap(":/crewmates/images/amongred.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    redCrew.setPixmap(pixmap);
-    redCrew.hide();
+    crew[red].setPixmap(pixmap);
+    crew[red].hide();
     pixmap = QPixmap(":/crewmates/images/amongwhite.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    whiteCrew.setPixmap(pixmap);
-    whiteCrew.hide();
+    crew[white].setPixmap(pixmap);
+    crew[white].hide();
     pixmap = QPixmap(":/crewmates/images/amongyellow.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    yellowCrew.setPixmap(pixmap);
-    yellowCrew.hide();
+    crew[yellow].setPixmap(pixmap);
+    crew[yellow].hide();
     pixmap = QPixmap(":/crewmates/images/amonglime.png");
     pixmap = pixmap.scaled(pixmap.width()/3, pixmap.height()/3, Qt::KeepAspectRatio);
-    limeCrew.setPixmap(pixmap);
-    limeCrew.hide();
+    crew[lime].setPixmap(pixmap);
+    crew[lime].hide();
     pixmap = QPixmap(":/bodies/images/blackdead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    blackBody.setPixmap(pixmap);
-    blackBody.hide();
+    dead[black].setPixmap(pixmap);
+    dead[black].hide();
     pixmap = QPixmap(":/bodies/images/bluedead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    blueBody.setPixmap(pixmap);
-    blueBody.hide();
+    dead[blue].setPixmap(pixmap);
+    dead[blue].hide();
     pixmap = QPixmap(":/bodies/images/browndead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    brownBody.setPixmap(pixmap);
-    brownBody.hide();
+    dead[brown].setPixmap(pixmap);
+    dead[brown].hide();
     pixmap = QPixmap(":/bodies/images/cyandead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    cyanBody.setPixmap(pixmap);
-    cyanBody.hide();
+    dead[cyan].setPixmap(pixmap);
+    dead[cyan].hide();
     pixmap = QPixmap(":/bodies/images/greendead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    greenBody.setPixmap(pixmap);
-    greenBody.hide();
+    dead[green].setPixmap(pixmap);
+    dead[green].hide();
     pixmap = QPixmap(":/bodies/images/orangedead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    orangeBody.setPixmap(pixmap);
-    orangeBody.hide();
+    dead[orange].setPixmap(pixmap);
+    dead[orange].hide();
     pixmap = QPixmap(":/bodies/images/pinkdead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    pinkBody.setPixmap(pixmap);
-    pinkBody.hide();
+    dead[pink].setPixmap(pixmap);
+    dead[pink].hide();
     pixmap = QPixmap(":/bodies/images/purpledead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    purpleBody.setPixmap(pixmap);
-    purpleBody.hide();
+    dead[purple].setPixmap(pixmap);
+    dead[purple].hide();
     pixmap = QPixmap(":/bodies/images/reddead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    redBody.setPixmap(pixmap);
-    redBody.hide();
+    dead[red].setPixmap(pixmap);
+    dead[red].hide();
     pixmap = QPixmap(":/bodies/images/whitedead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    whiteBody.setPixmap(pixmap);
-    whiteBody.hide();
+    dead[white].setPixmap(pixmap);
+    dead[white].hide();
     pixmap = QPixmap(":/bodies/images/yellowdead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    yellowBody.setPixmap(pixmap);
-    yellowBody.hide();
+    dead[yellow].setPixmap(pixmap);
+    dead[yellow].hide();
     pixmap = QPixmap(":/bodies/images/limedead.png");
     pixmap = pixmap.scaled(pixmap.width()/15, pixmap.height()/15, Qt::KeepAspectRatio);
-    limeBody.setPixmap(pixmap);
-    limeBody.hide();
+    dead[lime].setPixmap(pixmap);
+    dead[lime].hide();
 }
 
 void MapWidget::mousePressEvent(QMouseEvent *event)
 {
-    QLabel * selectedLabel = nullptr;
-    if(!body && !path){
-        switch (selected) {
-        case black:
-            selectedLabel = &blackCrew;
-            break;
-        case brown:
-            selectedLabel = &brownCrew;
-            break;
-        case blue:
-            selectedLabel = &blueCrew;
-            break;
-        case cyan:
-            selectedLabel = &cyanCrew;
-            break;
-        case green:
-            selectedLabel = &greenCrew;
-            break;
-        case orange:
-            selectedLabel = &orangeCrew;
-            break;
-        case pink:
-            selectedLabel = &pinkCrew;
-            break;
-        case purple:
-            selectedLabel = &purpleCrew;
-            break;
-        case red:
-            selectedLabel = &redCrew;
-            break;
-        case white:
-            selectedLabel = &whiteCrew;
-            break;
-        case yellow:
-            selectedLabel = &yellowCrew;
-            break;
-        case lime:
-            selectedLabel = &limeCrew;
-            break;
-        case none:
-            event->ignore();
-            break;
-        }
-    } else if(!path) {
-        switch (selected) {
-        case black:
-            selectedLabel = &blackBody;
-            break;
-        case brown:
-            selectedLabel = &brownBody;
-            break;
-        case blue:
-            selectedLabel = &blueBody;
-            break;
-        case cyan:
-            selectedLabel = &cyanBody;
-            break;
-        case green:
-            selectedLabel = &greenBody;
-            break;
-        case orange:
-            selectedLabel = &orangeBody;
-            break;
-        case pink:
-            selectedLabel = &pinkBody;
-            break;
-        case purple:
-            selectedLabel = &purpleBody;
-            break;
-        case red:
-            selectedLabel = &redBody;
-            break;
-        case white:
-            selectedLabel = &whiteBody;
-            break;
-        case yellow:
-            selectedLabel = &yellowBody;
-            break;
-        case lime:
-            selectedLabel = &limeBody;
-            break;
-        case none:
-            event->ignore();
-            break;
-        }
+    QLabel * selectedLabel = &crew[selected];
+    if(body){
+        selectedLabel = &dead[selected];
     }
-    if(event->button() == Qt::LeftButton && !path && selectedLabel != nullptr){
+    if(event->button() == Qt::LeftButton && !path && selected!=none){
         selectedLabel->move(event->x() - selectedLabel->pixmap()->width()/2,event->y() - selectedLabel->pixmap()->height()/2);
         if(!selectedLabel->isVisible())
             selectedLabel->show();
@@ -244,7 +164,6 @@ void MapWidget::setPath()
 {
     path = true;
     body = false;
-    update();//to show the last point
 }
 
 void MapWidget::setBody()
@@ -261,31 +180,9 @@ void MapWidget::setSelected(const crewColor &value)
 
 void MapWidget::reset()
 {
-    blackCrew.hide();
-    blueCrew.hide();
-    brownCrew.hide();
-    cyanCrew.hide();
-    greenCrew.hide();
-    orangeCrew.hide();
-    pinkCrew.hide();
-    purpleCrew.hide();
-    redCrew.hide();
-    whiteCrew.hide();
-    yellowCrew.hide();
-    limeCrew.hide();
-    blackBody.hide();
-    blueBody.hide();
-    brownBody.hide();
-    cyanBody.hide();
-    greenBody.hide();
-    orangeBody.hide();
-    pinkBody.hide();
-    purpleBody.hide();
-    redBody.hide();
-    whiteBody.hide();
-    yellowBody.hide();
-    limeBody.hide();
     for (int col = 1; col<14 ; col++) {
+        crew[col].hide();
+        dead[col].hide();
         crewPath[col] = QPainterPath();
     }
     update();
