@@ -729,7 +729,7 @@
         </widget>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">
-          <string>Path</string>
+          <string>Paths</string>
          </attribute>
          <widget class="QWidget" name="layoutWidget_2">
           <property name="geometry">

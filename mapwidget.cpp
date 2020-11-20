@@ -118,7 +118,8 @@ void MapWidget::mousePressEvent(QMouseEvent *event)
             selectedLabel->show();
         event->accept();
     } else if(event->button() == Qt::LeftButton && path && selected!=none) {
-        if(crewPath[selected].isEmpty()) {
+        if(!pathStarted) {
+            pathStarted=true;
             crewPath[selected].addEllipse(event->x(),event->y(),1,1);
         } else {
             crewPath[selected].lineTo(event->x(),event->y());
@@ -128,6 +129,7 @@ void MapWidget::mousePressEvent(QMouseEvent *event)
     } else if (event->button() == Qt::RightButton) {
         setCursor(Qt::ArrowCursor);
         selected = none;
+        pathStarted = false;
         update();
         event->accept();
     } else {
@@ -158,19 +160,21 @@ void MapWidget::setCrew()
 {
     path = false;
     body = false;
+    pathStarted = false;
 }
 
 void MapWidget::setPath()
 {
     path = true;
     body = false;
+    pathStarted = false;
 }
 
 void MapWidget::setBody()
 {
     body = true;
     path = false;
-
+    pathStarted = false;
 }
 
 void MapWidget::setSelected(const crewColor &value)

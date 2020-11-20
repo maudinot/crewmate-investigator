@@ -33,6 +33,7 @@ private:
     QLabel crew[14];
     QLabel dead[14];
     QPainterPath crewPath[14];
+    bool pathStarted;
 };
 
 #endif // MAPWIDGET_H
